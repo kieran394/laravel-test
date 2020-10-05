@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Welcome' );
+Route::get('/', 'QuestionnaireController@index' );
 
 
 Route::get('questionnaire/{questionnaire}', [QuestionnaireController::class, 'single'])->name('questionnaire');
-
+Route::get('questionnaire1/{id}', 'QuestionnaireController@showSlug');
+Route::post('create', 'QuestionnaireController@create');
+//Route::get('questionnaire1', 'QuestionnaireController@showSlug');

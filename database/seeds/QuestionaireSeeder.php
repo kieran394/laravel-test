@@ -20,9 +20,13 @@ class QuestionaireSeeder extends Seeder
             DB::table('questionnaires')->insert([
                 'name' => "questionaire_".$i,
                 'open' => true,
-                'question_slug' => 'k',
+                'question_id_q1'=> 1,
+                'question_id_q2'=> 2,
+                'question_id_q3'=> 3,
+                'question_id_q4'=> $i+4,                
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'question_slug' => 'k',
             ]);
         }    
         
