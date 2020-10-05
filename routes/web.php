@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Welcome' );
+
 
 Route::get('questionnaire/{questionnaire}', [QuestionnaireController::class, 'single'])->name('questionnaire');
+

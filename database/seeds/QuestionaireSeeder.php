@@ -24,6 +24,14 @@ class QuestionaireSeeder extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ]);
-        } 
-    }
+        }    
+        
+        $questionaires =Questionnaire::all();
+        foreach($questionaires as $questionnaire)
+        {
+            var_dump("name ".$questionnaire->name);
+           $questionnaire->question_slug =  Str::slug($questionnaire->name,'-');
+           $questionnaire->save();
+        }
+        }
 }

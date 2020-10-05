@@ -16,9 +16,10 @@ class CreateQuestionnairesTable extends Migration
         Schema::create('questionnaires', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('open')->default(true);
+            $table->boolean('open')->default(true);      
             $table->timestamps();
         });
+        
     }
 
     /**
